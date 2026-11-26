@@ -1,0 +1,22 @@
+{
+  "name": "bloodnet-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BloodNet AI - Predictive Blood Supply & Shortage Management System (Ranchi Pilot)",
+  "workspaces": [
+    "apps/web",
+    "apps/api"
+  ],
+  "scripts": {
+    "db:migrate": "node database/scripts/migrate.mjs",
+    "db:seed": "node database/scripts/seed.mjs",
+    "db:reset": "node database/scripts/migrate.mjs --reset && node database/scripts/seed.mjs",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "dev:api": "npm --workspace=apps/api run dev",
+    "dev:web": "npm --workspace=apps/web run dev"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
